@@ -14,7 +14,8 @@ import { NavComponent } from './shared/nav/nav.component';
 import { ContactComponent } from './shared/contact/contact.component';
 import { HomeComponent } from './shared/home/home.component';
 
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms'
     routingComponents,
     ContactComponent,
     HomeComponent,
+    
     
     
     
