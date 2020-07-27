@@ -17,50 +17,59 @@
 
        <div class="wrapper">
         <form method="post" action="" class="ccform" #userForm="ngForm">
-            {{ userForm.value | json }}
+           
+<hr/>
+
 
         <div class="ccfield-prepend">
-            <span class="ccform-addon"><i class="fa fa-user fa-2x"></i></span>
-            <input class="ccformfield" name="userName" type="text" placeholder="Full Name" required ngModel>
+            
+            <label> <strong> Full Name </strong> </label>
+            <input class="form-control" name="userName" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" type="text" placeholder="Full Name" required [(ngModel)]="userModel.name">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched ">Name is required</small>
         </div>
+
+
         <div class="ccfield-prepend">
-            <span class="ccform-addon"><i class="fa fa-envelope fa-2x"></i></span>
-            <input class="ccformfield" type="text" placeholder="Email" name="email" required ngModel>
+
+            <label> <strong> Email </strong> </label>
+            
+            <input class="form-control" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" type="text" placeholder="Email" name="email" required [(ngModel)]="userModel.email">
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched ">Email is required</small>
         </div>
+       
         <div class="ccfield-prepend">
-            <span class="ccform-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
-            <input class="ccformfield" type="text" placeholder="Phone" name="phone" ngModel>
+            <label> <strong> Phone Number </strong> </label>
+            <input class="form-control" #phone="ngModel" pattern="^\d{10}$" [class.is-invalid]="phone.invalid && phone.touched" type="tel" placeholder="Phone" name="phone" required [(ngModel)]="userModel.phone">
+          <!--  <small class="text-danger" [class.d-none]="phone.valid || phone.untouched ">Valid 10 digit phone number is required</small>   -->
+            
+                <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+                      <small class="text-danger" *ngIf="phone.errors.required"> Phone number is required </small>  
+                      <small class="text-danger" *ngIf="phone.errors.pattern"> Phone number must be 10 digits </small>  
+
+                </div>
         </div>
+
+
          <div class="ccfield-prepend">
-            <span class="ccform-addon"><i class="fa fa-info fa-2x"></i></span>
-            <input class="ccformfield" type="text" placeholder="Subject" name="subject" required ngModel>
+            <label> <strong> Subject </strong> </label>
+            <input class="form-control" #subject="ngModel" [class.is-invalid]="subject.invalid && subject.touched" type="text" placeholder="Subject" name="subject" [(ngModel)]="userModel.subject">
         </div>
+
         <div class="ccfield-prepend">
-            <span class="ccform-addon"><i class="fa fa-comment fa-2x"></i></span>
-            <textarea class="ccformfield" name="message" rows="8" placeholder="Message" required ngModel>
+            <label> <strong> Message </strong> </label>
+            <textarea class="form-control" #message="ngModel" [class.is-invalid]="message.invalid && message.touched" name="message" rows="8" placeholder="Message" [(ngModel)]="userModel.message">
 
             </textarea>
         </div>
-        <div class="ccfield-prepend">
-            <input class="ccbtn" type="submit" value="Submit">
-        </div>
+     
+
+        <button [disabled]="userForm.form.invalid" class="btn btn-primary" type="submit"> Submit </button>
+
         </form>
     </div>
 
 
-
-
-
-
    </div>        
-
-
-
-
-
-
-
-
 
 
 </div>   

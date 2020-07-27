@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './user';
 
 @Component({
   selector: 'app-contact',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   topics =['Angular', 'React', 'Vue'];
+  userModel = new User('', '', 1000000000, '', '', '');
 
   constructor() { }
 
