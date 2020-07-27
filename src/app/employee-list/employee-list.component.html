@@ -1,0 +1,54 @@
+
+<div class="container">
+
+   <div style="text-align: center" >;
+  
+      <h1>Welcome to R Developer Employee List Details Page</h1>
+      
+
+
+<h3 style="color:red;font-size:20px"> {{ errorMsg}}  </h3>
+</div>
+
+
+
+
+<div align="center" >
+
+   
+   <table>
+     
+<ul style="list-style: none;" *ngFor="let employee of employees; odd as o">
+  
+   <tr> <th>
+
+   <li style="color:#DEB887; font-size:20px"  > <strong>  <a style="color: #7FFF00;">  
+       Employe Id    : </a> 
+    {{employee.id}}  </strong>
+    </li>
+   </th>
+</tr> 
+  
+<tr> <td>
+   <li style="color:#DEB887; font-size:20px"> <strong>  <a style="color: #7FFF00;">  
+       Employe userId: </a>  </strong> {{employee.userId}} </li>
+
+</td> </tr>
+  
+<tr> <td>
+   <li style="color:#DEB887; font-size:20px"> <strong>  <a style="color: #7FFF00;">  
+       Employe Title : </a>  </strong>{{employee.title}} </li>
+</td> </tr>
+
+   <tr> <td>
+   <li style="color:#DEB887; font-size:20px"> <strong>  <a style="color: #7FFF00;">   Employe Body  : </a>  </strong> {{employee.body}} </li>
+  </td> </tr>
+
+
+</ul>
+
+</table>
+</div>
+
+
+</div>
