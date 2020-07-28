@@ -9,6 +9,7 @@ import { User } from './user';
 export class ContactComponent implements OnInit {
 
   topics =['Angular', 'React', 'Vue'];
+  
   userModel = new User('', '', 1000000000, '', '', '');
 
   constructor() { }
